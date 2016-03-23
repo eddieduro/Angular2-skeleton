@@ -19,6 +19,7 @@ import { Restaurant } from './restaurant.model';
 })
 export class NewRestaurantRatingComponent {
   public onRatingSubmit: EventEmitter<number>;
+  public selectedRestaurant: Restaurant;
   constructor(){
     this.onRatingSubmit = new EventEmitter();
   }

@@ -33,4 +33,7 @@ export class EditRestaurantComponent {
       rating
     )
   }
+  updateCost(newCost){
+    this.restaurant.expense = newCost;
+  }
 }
