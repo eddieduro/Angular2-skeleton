@@ -2,6 +2,8 @@ import { Component, EventEmitter } from 'angular2/core';
 import { RestaurantComponent } from './restaurant.component';
 import { Restaurant } from './restaurant.model';
 import { EditRestaurantComponent } from './edit-restaurant.component';
+import { NewRestaurantRatingComponent } from './new-restaurant-rating.component';
+
 
 @Component ({
   selector: 'restaurant-list',
@@ -14,13 +16,12 @@ import { EditRestaurantComponent } from './edit-restaurant.component';
   [class.selected]="currentRestaurant === selectedRestaurant">
   </restaurant-display>
   <div *ngIf="selectedRestaurant">
-    <h3> {{ selectedRestaurant.name }} </h3>
-    <h4> {{selectedRestaurant.address}} </h4>
-    <h4 class="rating"> {{selectedRestaurant.rating}} </h4>
+    <h3> Name: {{ selectedRestaurant.name }} </h3>
+    <h4> Address: {{selectedRestaurant.address}} </h4>
+    <h4 class="rating"> Cost: {{selectedRestaurant.expense}} </h4>
   </div>
   <edit-restaurant *ngIf="selectedRestaurant" [restaurant]="selectedRestaurant">
   </edit-restaurant>
-
   `
 })
 
@@ -36,4 +37,5 @@ export class RestaurantListComponent {
     this.selectedRestaurant = clickedRestaurant;
     this.onRestaurantSelect.emit(clickedRestaurant);
   }
+
 }

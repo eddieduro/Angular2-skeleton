@@ -1,6 +1,8 @@
 import { Component } from 'angular2/core';
 import { Restaurant } from './restaurant.model';
 
+
+
 @Component ({
   selector: 'restaurant-display',
   inputs: ['restaurant'],
@@ -15,7 +17,5 @@ import { Restaurant } from './restaurant.model';
 
 export class RestaurantComponent {
   public restaurant: Restaurant;
-  setRating(newRating: number){
-    this.restaurant.rating = newRating;
-  }
+
 }
